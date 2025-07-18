@@ -1,0 +1,79 @@
+/* Import Google Fonts as fallbacks */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Fredoka+One&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Your custom Sensa Wild Fill font */
+@font-face {
+  font-family: 'Sensa Wild Fill';
+  src: url('./assets/fonts/SensaWild-Fill.woff2') format('woff2'),
+       url('./assets/fonts/SensaWild-Fill.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+}
+
+/* Custom font classes */
+.team-welly-heading {
+  font-family: 'Sensa Wild Fill', 'Righteous', 'Fredoka One', 'Inter', system-ui, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.team-welly-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+}
+
+.team-welly-button {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+}
+
+/* Mobile-first responsive design */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F766E;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #134E4A;
+}
