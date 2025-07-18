@@ -46,6 +46,11 @@ ehthumbs.db
 # dotenv environment variables file
 .env
 
+# Credentials and secrets
+local-credentials.txt
+credentials.txt
+*.credentials
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
