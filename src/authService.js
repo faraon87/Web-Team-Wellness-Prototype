@@ -12,12 +12,23 @@ import {
 // Firebase configuration - will use environment variables or demo config
 const getFirebaseConfig = () => {
   // Check if we have real Firebase config in environment variables
-  if (process.env.REACT_APP_FIREBASE_API_KEY && 
-      process.env.REACT_APP_FIREBASE_API_KEY !== 'your-firebase-api-key-here') {
+  const apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
+  const authDomain = process.env.REACT_APP_FIREBASE_AUTH_DOMAIN;
+  const projectId = process.env.REACT_APP_FIREBASE_PROJECT_ID;
+  
+  // More robust check for real Firebase configuration
+  if (apiKey && 
+      apiKey !== 'your-firebase-api-key-here' && 
+      !apiKey.includes('demo') &&
+      apiKey.length > 20 &&
+      authDomain &&
+      projectId) {
+    
+    console.log("🔍 Detected real Firebase configuration");
     return {
-      apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-      authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+      apiKey: apiKey,
+      authDomain: authDomain,
+      projectId: projectId,
       storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
       messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
       appId: process.env.REACT_APP_FIREBASE_APP_ID,
@@ -25,6 +36,7 @@ const getFirebaseConfig = () => {
     };
   }
   
+  console.log("🔍 Using demo Firebase configuration");
   // Demo config for development/testing
   return {
     apiKey: "demo-api-key",
@@ -67,15 +79,13 @@ class AuthService {
       });
       
       this.isInitialized = true;
+      this.isDemoMode = false; // Explicitly set to false when Firebase is initialized
       console.log("✅ Firebase initialized successfully");
       console.log(`🔗 Connected to project: ${config.projectId}`);
       console.log("🌐 Auth domain:", config.authDomain);
-      
-      // Check if we're connected to real Firebase
-      if (config.apiKey && config.apiKey.length > 20) {
-        console.log("🎉 Real Firebase configuration detected!");
-        console.log("📱 SSO providers should be functional");
-      }
+      console.log("🎉 Real Firebase configuration detected!");
+      console.log("📱 SSO providers should be functional");
+      console.log("🚫 Demo mode: DISABLED");
       
     } catch (error) {
       console.error("❌ Firebase initialization failed:", error);

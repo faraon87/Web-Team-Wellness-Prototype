@@ -5,12 +5,14 @@ export const useAuth = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isDemoMode, setIsDemoMode] = useState(false);
 
   useEffect(() => {
     // Initialize auth service and listen for auth state changes
     const initAuth = async () => {
       try {
         await authService.init();
+        setIsDemoMode(authService.isDemoModeActive());
         setLoading(false);
       } catch (error) {
         setError('Failed to initialize authentication');
@@ -78,6 +80,7 @@ export const useAuth = () => {
     user,
     loading,
     error,
+    isDemoMode,
     signInWithGoogle,
     signInWithApple,
     signInWithX,

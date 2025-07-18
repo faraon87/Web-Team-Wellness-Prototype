@@ -6,7 +6,7 @@ const TeamWellyApp = () => {
   const [currentScreen, setCurrentScreen] = useState('landing');
   const [isLoading, setIsLoading] = useState(false);
   const [authError, setAuthError] = useState(null);
-  const { user, signInWithGoogle, signInWithApple, signInWithX, signOut } = useAuth();
+  const { user, signInWithGoogle, signInWithApple, signInWithX, signOut, isDemoMode } = useAuth();
 
   // Handle SSO Sign In
   const handleSSOSignIn = async (provider) => {
@@ -194,18 +194,35 @@ const TeamWellyApp = () => {
           RESTORING YOUR AURA ONE BREATHE AT A TIME
         </p>
 
-        {/* Demo Mode Notification */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6 w-full max-w-sm">
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
-              <span className="text-white text-xs">ⓘ</span>
+        {/* Demo Mode Notification - Only show if in demo mode */}
+        {isDemoMode && (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6 w-full max-w-sm">
+            <div className="flex items-center space-x-2">
+              <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs">ⓘ</span>
+              </div>
+              <p className="text-blue-700 text-sm font-medium">Demo Mode</p>
             </div>
-            <p className="text-blue-700 text-sm font-medium">Demo Mode</p>
+            <p className="text-blue-600 text-xs mt-1 leading-relaxed">
+              SSO buttons show demo functionality. For full authentication, set up Firebase following the guide in FIREBASE_SETUP.md
+            </p>
           </div>
-          <p className="text-blue-600 text-xs mt-1 leading-relaxed">
-            SSO buttons show demo functionality. For full authentication, set up Firebase following the guide in FIREBASE_SETUP.md
-          </p>
-        </div>
+        )}
+        
+        {/* Production Mode Success Message */}
+        {!isDemoMode && (
+          <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-6 w-full max-w-sm">
+            <div className="flex items-center space-x-2">
+              <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs">✅</span>
+              </div>
+              <p className="text-green-700 text-sm font-medium">Production Mode</p>
+            </div>
+            <p className="text-green-600 text-xs mt-1 leading-relaxed">
+              Firebase connected successfully! All SSO providers are functional.
+            </p>
+          </div>
+        )}
         
         {/* Authentication Options */}
         <div className="w-full max-w-sm space-y-4">
