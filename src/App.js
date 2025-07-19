@@ -87,6 +87,7 @@ const App = () => {
                   onSignOut={handleSignOut}
                   isLoading={isLoading}
                   authError={authError}
+                  setAuthError={setAuthError}
                   isDemoMode={isDemoMode}
                 />
               )

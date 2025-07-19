@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Building, Users, LogOut, User } from 'lucide-react';
+import { Building, LogOut, User } from 'lucide-react';
 
-const LandingScreen = ({ user, onSSOSignIn, onSignOut, isLoading, authError, isDemoMode }) => {
+const LandingScreen = ({ user, onSSOSignIn, onSignOut, isLoading, authError, setAuthError, isDemoMode }) => {
   const [currentAuthMethod, setCurrentAuthMethod] = useState('individual');
 
   // Loading Button Component
