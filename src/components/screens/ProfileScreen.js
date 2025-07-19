@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Edit, Heart, Target, Calendar, Trophy, Settings, LogOut } from 'lucide-react';
+import { User, Edit, LogOut } from 'lucide-react';
 
 const ProfileScreen = ({ user, onSignOut }) => {
   const [isEditing, setIsEditing] = useState(false);

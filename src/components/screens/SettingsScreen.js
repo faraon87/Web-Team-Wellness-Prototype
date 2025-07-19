@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, Bell, Moon, Sun, Volume2, VolumeX, Smartphone, Globe, Shield, HelpCircle, Info } from 'lucide-react';
+import { Bell, Sun, Volume2, Smartphone, Globe, Shield, HelpCircle, Info } from 'lucide-react';
 
 const SettingsScreen = () => {
   const [settings, setSettings] = useState({

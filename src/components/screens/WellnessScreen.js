@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Play, Pause, RotateCcw, Heart, Timer, Target } from 'lucide-react';
+import { Play, Pause, RotateCcw, Timer } from 'lucide-react';
 
 const WellnessScreen = () => {
   const [isBreathing, setIsBreathing] = useState(false);
   const [breathPhase, setBreathPhase] = useState('inhale'); // inhale, hold, exhale
   const [timeLeft, setTimeLeft] = useState(0);
-  const [sessionTime, setSessionTime] = useState(300); // 5 minutes default
+  const [sessionTime] = useState(300); // 5 minutes default
   const [breathCount, setBreathCount] = useState(0);
 
   const breathingPatterns = [

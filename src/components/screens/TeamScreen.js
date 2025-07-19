@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Trophy, Target, MessageCircle, Plus, Heart } from 'lucide-react';
+import { Users, Trophy, MessageCircle, Plus, Heart } from 'lucide-react';
 
 const TeamScreen = () => {
   const [activeTab, setActiveTab] = useState('members');
