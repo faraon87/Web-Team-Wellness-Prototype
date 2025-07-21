@@ -172,24 +172,26 @@ REACT_APP_FIREBASE_MEASUREMENT_ID=measurement-id
 
 ## 📐 **FEATURE DEVELOPMENT STANDARDS**
 
-### **1. Component Development**
+### **1. Component Development (iOS Migration Ready)**
 
 #### **New Screen Components:**
 ```javascript
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../useAuth';
 
+// iOS Migration Note: This pattern translates directly to React Native
 const NewScreen = () => {
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Component logic here
+  // Component logic here - keep platform-agnostic
+  // Avoid web-specific APIs for easier iOS migration
 
   return (
     <div className="min-h-screen bg-white p-4">
       <div className="max-w-md mx-auto">
-        {/* Screen content */}
+        {/* Screen content - use iOS-friendly interaction patterns */}
       </div>
     </div>
   );
@@ -197,6 +199,13 @@ const NewScreen = () => {
 
 export default NewScreen;
 ```
+
+#### **iOS Migration Guidelines:**
+- **Component Structure**: Use functional components (React Native compatible)
+- **Navigation Patterns**: Bottom navigation translates to React Navigation
+- **Styling**: Tailwind classes map to React Native StyleSheet
+- **User Interactions**: Touch-friendly design already implemented
+- **State Management**: Hooks-based approach works in React Native
 
 #### **Navigation Integration:**
 - All new screens must be added to `App.js` routing
