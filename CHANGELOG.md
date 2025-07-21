@@ -291,13 +291,29 @@
 - [ ] Progress analytics
 - [ ] Integration with wearable devices
 
-### 📋 Planned Features
-- [ ] React Native mobile app conversion
-- [ ] Real-time team challenges
-- [ ] AI-powered wellness recommendations
-- [ ] Corporate dashboard for employers
-- [ ] Advanced reporting and insights
-- [ ] Integration with HR systems
+### **Planned Features (iOS Migration Roadmap)**
+- [ ] **React Native Conversion**: Complete codebase migration to React Native
+- [ ] **iOS-Specific Features**: 
+  - [ ] Push notifications using Firebase Cloud Messaging
+  - [ ] Biometric authentication (Face ID/Touch ID)
+  - [ ] Health Kit integration for wellness data
+  - [ ] Native iOS navigation (React Navigation)
+- [ ] **App Store Preparation**:
+  - [ ] iOS app icon and asset generation
+  - [ ] App Store screenshots and metadata
+  - [ ] TestFlight beta testing setup
+  - [ ] App Store Connect configuration
+- [ ] **Enhanced Native Experience**:
+  - [ ] Native performance optimizations
+  - [ ] iOS-specific UI animations and transitions
+  - [ ] Device-specific features (camera, sensors)
+  - [ ] Offline functionality with local storage
+
+### **iOS Migration Timeline:**
+- **Phase 1** (Months 1-2): React Native setup and core component migration
+- **Phase 2** (Months 3-4): Authentication and navigation implementation
+- **Phase 3** (Months 5-6): iOS-specific features and App Store preparation
+- **Phase 4** (Month 7): Beta testing, optimization, and App Store submission
 
 ---
 
