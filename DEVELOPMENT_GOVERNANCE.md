@@ -13,14 +13,16 @@ This document establishes boundaries, rules, and best practices for AI coding as
 - **Authentication**: Firebase Auth with SSO (Google, Apple, X/Twitter)
 - **Icons**: Lucide React
 - **Deployment**: Railway, GitHub Pages, Vercel
-- **Status**: Production-ready wellness app with complete navigation system
+- **Status**: Production-ready React web app designed for iOS migration
+- **Migration Target**: React Native for iOS App Store deployment
 
 ### **Core Architecture:**
-- Mobile-first responsive design
-- Protected routes with authentication
-- Bottom navigation pattern
-- Component-based architecture
-- Environment variable configuration
+- Mobile-first responsive design (iOS-ready patterns)
+- Protected routes with authentication (compatible with React Navigation)
+- Bottom navigation pattern (native iOS translation ready)
+- Component-based architecture (React Native compatible)
+- Environment variable configuration (cross-platform ready)
+- iOS-optimized user experience and interaction patterns
 
 ---
 
