@@ -2,7 +2,9 @@
 ## Firebase Authentication & Deployment Configuration
 
 ### 🎯 **Overview**
-This is the consolidated setup guide for the Team Welly wellness platform. All setup information from previous scattered documents has been organized here for clarity and ease of use.
+This is the consolidated setup guide for the Team Welly wellness platform - a production-ready React web app designed for iOS migration. The current React implementation serves as the foundation for a future React Native iOS app, with all components and patterns chosen for cross-platform compatibility.
+
+**Migration Strategy**: Web-first development → React Native conversion → iOS App Store deployment
 
 ---
 
